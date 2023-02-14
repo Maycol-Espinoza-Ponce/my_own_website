@@ -5,28 +5,66 @@
     <meta charset="UTF-8"> <!-- special character recognition -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maycol_Espinoza</title> <!-- tab title -->
+    <title>Maycol Espinoza</title> <!-- tab title -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet"> <!-- Principal Tipo de letra usada en todo el BODY -->
+   
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
     <link rel="stylesheet" href="./style.css">
-</head> <!-- here ends the header -->
+    <script defer src="js/app.js"></script> <!-- Se le agrega el atributo DEFER para que este escrip se difiera hasta que se haya cargado el dom -->
+
+</head> <!-- here ends the head -->
 <!------------------------------------------------------------------------------------------------>
 <body> <!-- here start the body of the web page  -->
 <!------------------------------------------------------------------------------------------------>
-    <header>
-        <div class="topnav"> <!--This is the principal navigator bar-->
-            <a href="/home.html">HOME</a>
-            <a href="/social.html">SOCIAL</a>
-            <a href="/experience.html">EXPERIENCE</a>
-            <a href="/about.html">ABOUT</a>
-            <a href="/contact.html">CONTACT</a>
-          </div>
+    <header class="topheader">
+        <nav class="topnav">
+            <a href="#" class="logo_little_photo">
+                <img height="50" width="50" src="https://media.licdn.com/dms/image/C4D03AQGp2UGDlyIY4A/profile-displayphoto-shrink_800_800/0/1563988494604?e=2147483647&v=beta&t=WmMhK0m-oaLaPL-ogt_hiYIWXbPQmo8aolL5q-VP34Q" alt="Foto de Maycol Espinoza">
+                <div class="logotype">
+                    <p>Maycol Espinoza Ponce</p>
+                </div>
+            </a>
+            <button class="open_main_menu" aria-label="OPEN MENU">
+                <img class="menu_icon1" src="https://img.icons8.com/glyph-neue/256/xbox-menu.png" alt="Icono Open Menu">
+            </button> <!-- Gracias a el atributo ARIA LABER los lectores de pantalla para personas con discapacidad, podran leer o escuchar que es lo que hace este boton -->
+            <ul class="main_menu"> <!-- Add a class named main_menu to add CSS styling-->
+            <button class="close_main_menu" aria-label="CLOSE MENU">
+                <img class="menu_icon2" src="https://img.icons8.com/sf-black/256/xbox-menu.png" alt="Icon Close Menu">   
+            </button>
+                <li><a href="#home" class="selected">HOME</a></li> <!-- Se agrega la clase SELECTED para dar instrucciones en el CSS de como reaccionar -->
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#experience">EXPERIENCE</a></li>
+                <li><a href="#social">SOCIAL</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+            </ul>
+        </nav>
     </header>
+
+    <section class="profile">
+        <div class="profile_info">
+            <h1 class="profile_title">Hello, I'm <br /> Maycol Espinoza Ponce</h1>
+            <p class="profile_details">
+                I am a student development in DatagroveCR <br>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique, delectus rem aliquid voluptatem quas ipsam tempora. Tempora in temporibus culpa exercitationem quam voluptas alias eaque ut? Eum unde maiores nostrum!
+            </p>
+            <button class="profile_btn">Download CV</button>
+        </div>
+        <span class="profile_img_section"> <!--Esto antes era un DIV pero lo cambie a SPAN para colocar mas facil la linea verde bajo la foto -->
+            <img class="profile_img" src="https://media.licdn.com/dms/image/C4D03AQGp2UGDlyIY4A/profile-displayphoto-shrink_800_800/0/1563988494604?e=2147483647&v=beta&t=WmMhK0m-oaLaPL-ogt_hiYIWXbPQmo8aolL5q-VP34Q" alt="DEVELOPER PHOTO">
+            <div class="profile_img_line"></div> <!--Este DIV es para hacer una barra(rectangulo) debajo de la foto principal-->
+        </span> <!---->
+    </section>
+
 <!------------------------------------------------------------------------------------------------>
-    <main>
+    <!--<main>
         <div class="principalHome">
                 <table>
                     <thead></thead>
                         <th><h1 id="stylehome">HOME</h1></th>
-                        <!-- This is a image tag, for location of the image (image example)-->
+                        <!-- This is a image tag, for location of the image (image example)--
                         <th><img src="https://media.licdn.com/dms/image/C4D03AQGp2UGDlyIY4A/profile-displayphoto-shrink_800_800/0/1563988494604?e=2147483647&v=beta&t=WmMhK0m-oaLaPL-ogt_hiYIWXbPQmo8aolL5q-VP34Q" alt="LinkedIn_Photo" id="ProfilePhoto"></th>
                     </table>
 
@@ -34,31 +72,31 @@
                 <h1>Hello! welcome to my personal site!</h1>
                 <h2>I am a software development student. </h2>
                 <h3>
-                    <p> <!-- this is a paragraph tag -->
+                    <p> <!-- this is a paragraph tag --
                     This is my first project to put into practice what I have learned so far with Datagrove.
                     <br>
                     It is my own website and that excites me a lot! It's hard for me to believe that <br>
                     I'm starting to do things like this that in the past seemed impossible to me... <br> 
                     But it's not like that and thank God and Datagrove this is the beginning of a great adventure without end.
                     <br><br>
-                    <br> <!-- This is a line break -->
+                    <br> <!-- This is a line break --
               </h3>
             </table>
         </div>
     
 
-    <h2>Maycol Espinoza Ponce</h2> <!-- The diferent betwen the tags(h1,h2,h3,h4,h5,h6) -->
+    <h2>Maycol Espinoza Ponce</h2> <!-- The diferent betwen the tags(h1,h2,h3,h4,h5,h6) --
 
         
     <p>
         <h3> I would like share with you the follow: </h3> <!-- The difference between the h1 to h6 tags is the size -->
-        <!-- <button> </button> <button> </button> -->
+        <!-- <button> </button> <button> </button> --
     </p>
     <footer>
-        <!-- This is a image tag, for location of the image (image example)-->
+        <!-- This is a image tag, for location of the image (image example)--
         <img src="https://i0.wp.com/top-bibleverses.com/wp-content/uploads/2022/06/Philippians-4-13-Facebook-Bible-Verse-Cover-Photo-1.jpg?fit=1920%2C729&ssl=1" alt="Philippians_4_13" id="Philippians_4_13">
     </footer>
-    </main>
+    </main> 
     <!------------------------------------------------------------------------------------------------>
 </body> <!-- here ends the body of the web page -->
 </html> <!-- here ends the HTML5 estructure -->

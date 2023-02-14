@@ -1,4 +1,276 @@
-/*  */
+
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+/* DECLARACION DE VARIABLES */
+:root {  /*Aqui definimos variables para los diferentes colores que voy a tener en mi pagina. :root = html, simplemente el :root es mas generico y se usa por si esta hoja de CSS se utiliza en otro proyecto*/
+  --theme-color: white; /*Declarar y usar variables es muy util para hacer en el futuro cambios de diseno mucho mas facil. ya que solo cambiasmos lo que queremos modificar en la variable y se realizaran todos los cambios en donde se mencione esa variable*/
+  --primary-color: rgb(0, 81, 255);
+  --secundary-color: rgb(8, 194, 30);
+  --tex-color: black;
+  --text-color-inverse: white;
+  --navbar-shallow-color: rgb(141, 129, 129);
+  --menu-mobile-background-color: rgb(37, 40, 128);
+}
+
+.topheader { /* Este es el encabezado de arriba donde va la foto pqequena y mi nombre */
+  box-shadow: 0 4px 5px var(--navbar-shallow-color); /* Esto es para crear como una linea de sombre que contenga a la barra de navegacion, luego llamamos a la variable color para darle el color a la sombra */
+  position: fixed; /* Esto lo que hace es fijar la barra de navegacion para que cuando se haga scroll, la barra este siempre visible */
+  background-color: var(--theme-color); /* Se le agrega color porque de lo contario se vera transparente */
+  left: 0; /* Se a la izquierda en 0 ya que cuando se agregue estilo al contenido, el logo_little_photo quedaria con el margen del contenido */
+  top: 0; /* Se fija hacia arriba en 0 ya que cuando se agregue estilo al contenido, el logo_little_photo quedaria con el margen del contenido */
+  width: 100%;
+}
+
+.topnav {  /* Barra de navegacion de arriba */
+  display: flex; /*Esto hace que la lista de opciones se ponga en la parte de arriba junto a la foto pequena(topheader) */
+  justify-content: space-between; /* Esto lo que hace es dejar un espacio en medio de los elementos de la barra de navegacion. osea manda la foto y la lista a cada extremo de la pagina (rerecha e izquierda) */
+  padding: 15px;
+  max-width: 980px; /* Esto es para que cuando la ventana  */
+  margin: 0 auto; /* Con este queda centrado con respecto al header, El 0 es para arriba y abajo y el AUTO es para la izquierda y derecha */
+
+}
+/* START MENU_ICON  STYLE*/
+.menu_icon1,
+.menu_icon2 {  /* Da estilo a los botones de menu en dispositivos moviles */
+  width: 60px; /*ANCHO*/
+  height: 60px; /*ALTO*/
+}
+
+/* START LOGO STYLE*/
+.logo_little_photo {
+  display: flex; /* Esto es para poner el mombre a la par de la foto pequena en la barra de navegacion */
+  align-items: center; /* Esto hace que los elementos se alinean de manera horizontal y se sentra en el eje horizontal*/
+  font-size: 18px; /* Tamano de fuente de las letras */
+  font-weight: 500; /* peso-fuerza de la letra */
+  color: var(--primary-color); /* Llamamos a la variable de color */
+}
+
+.logo_little_photo img { /* Con esto redondeamos los bordes la imagen del logo(little_photo) */
+  border-radius: 50%;
+}
+
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+body {  /* Esto indica que toda la fuente del body sean las que especifica ahi y las que indico en el head del html*/
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--theme-color);
+  color: var(--tex-color);
+  padding-top: 80px; /* Se le agrega este RELLENO ARRRIBA para que pueda verse bien los DIV que contienen mi presentacion principal, ya que todo el topheader esta fijado con POSITION FIXED */
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+a {
+  text-decoration: none; /* Esto lo que hace es que a le quite la linea que sale debajo de los enlaces, osea recetea ese formato */
+  color: var(--tex-color);
+
+}
+
+/*STAR MENU STYLE*/
+.main_menu {
+  display: flex; /*Esto lo que hace es desplegar las lista horizontal par que se vea vertical, ose arriba cada opcion una al lado de la otra*/
+  list-style: none; /* Esto le formatea los puntos que tira por defecto las etiquetas LS, y quita los puntos */
+  margin: 0; /* Receteo de los margenes que el navegador agrega por defecto a los elementos de tipo LI */
+  padding: 0; /* Receteo de los rellenos que el navegador agrega por defecto a los elementos de tipo LI */
+/* La libreria NORMALIZE que agregamos en el head, nos agrega el margin y padding pero normalizados para que se vea de una unica forma en todos los navegadores */
+}
+
+.main_menu li { /* Con esto quiero centrar y separar uno de otros los elementos que estan dentro del menu  */
+  padding: 0 15px; /* De arriba y abajo 0 pixeles y de izquierda y derecha 15 pixeles. De esta manera entre cada uno de los elementos(home,about,experience,contact,social) va haber unsa separacion de 15px y por lo tanto como cada uno posee 15px entonces vana a tener 30px de separacion entre ellos */
+  
+}
+
+.main_menu a {
+  color: var(--tex-color); /*  */
+  font-size: 18px; /* Tamano de letra fuente */
+  font-weight: 500px; /* Peso o fuerza de la letra fuente */
+  line-height: 50px; /* Define el alto de la linea donde va el menu, manera mas facil de centrar elemento */
+  text-transform: uppercase; /*  */
+  position: relative; /* Esto lo agregue despues de agregar el .main_menu a::after{} esto es para posicionar la raya de abajo */
+}
+/* ********** SEUDOSELECTOR TO CREATE UNDERLINE(RECTANGLE) IN MENU OPTIONS *************************** */
+.main_menu a::after { /* Usamos este seudoselector para la interacion del subrayado(RECTANGULO) en el menu principal */
+  content: ""; /* Ponemos el contenido vacio porque lo que queremos es crear un RECTANGULO(subrayado) debajo de las opciones del menu nada mas. Por otra parte es necesario agregar esta linea de codigo porque de lo contrario aunque usemos el seudoselector, no se lograria ver nada */
+  background-color: var(--secundary-color); /*  */
+  position: absolute; /* Con esto pasamos el contenido que se encuantra a un lado, lo pasamos hacia abajo de las opciones del menu, para convertirlo en subrayado */
+  left: 0; /* Posicionado a la ziquierda */
+  top: calc(100% + 4px); /* Para calcular que el rectangulo(subrayado) este debajo del enlace a 4px*/
+  width: 100%; /* Ancho */
+  height: 4px; /* Alto */
+
+  opacity: 0; /* La opacidad va de 0 a 1. CERO es que no se ve y UNO es que si se ve */
+  transition: opacity 0.5s; /* Esto es el tiempo en que dura el efecto de la opacidad para ser visible */
+}
+/* El seudoselector y las instrucciones de las lineas de arriba se van a aplicar si sucede lo siguiente: */
+.main_menu a.selected::after, /* Llamamos a la clase SELECTED del index */
+.main_menu a:hover::after {   /* Si el enlace esta seleccionado entonces su opacidad sera de 0.8 */
+  opacity: 0.8; /* CERO es no visible y mayor que cero hasta el UNO es visible */
+}
+
+.main_menu a:hover { /* Cuando se haga HOVER(Seleccione) una opcion del menu */
+  color: var(--primary-color); /* Que esa seleccion tenga el mismo color */
+}
+/********************************************************************************************************************/
+
+/* ---------------------------------------------- BUTTONS STYLE ------------------------------------------- */
+.open_main_menu,
+.close_main_menu { /*  */
+  display: none; /* Con esto oculatamos los botones para los dispositivos de escritorio */
+}
+
+.logotype {
+  display: flex;
+  justify-content: center;
+}
+
+/* ******************* MODO DISPOSITIVO MOVIL *********************** */
+@media (max-width: 950px) { /* Con esta mediaquery empezamos a dar las intrucciones de los estilos para los dispositivos moviles, ademas de indicarle que si la pantalla tiene menos de 950px, entonces que aplique los siguientes estilos */
+  
+  .main_menu { /*  */
+    flex-direction: column; /* Pone en columna los elementos que estan en fila de la barra de navegacion*/
+    position: fixed; /* Desacopla las opciones del menu y los pone en el centro de la pantalla */
+    left: 0; /* Al lado */
+    top: 0; /* Alto */
+    width: 100%; /* Ancho */
+    align-items: center; /* Alinea la columna */
+    background-color: var(--menu-mobile-background-color);; /*  */
+    color: var(--text-color-inverse);
+    height: 100%; /*  */
+    overflow-y: auto; /*Esto es para que se pueda hacer SCROLL en el menu cuando se vea desde un dispositivo movil*/
+    
+    opacity: 0; /* Hace opaco al menu para que no se pueda ver, pero el menu permanece ahi todavia */
+    pointer-events: none; /* Con esto evitamos que se le pueda hacer click al menu cuando se encuentra opaco  */
+    transition: opacity 0.3s; /* Esto reelentiza la transicion del cambio de color del opacity */
+  }
+
+  .main_menu li { /* Codigo sobre escrito */
+  padding: 0; /*  */
+  }
+
+  .main_menu a { /* Codigo sobre escrito */
+  color: var(--text-color-inverse); /*  */
+  line-height: 70px; /*  */
+  font-size: 25px;
+  }
+
+/************************ COMPORTAMIENTO DE LOS BOTONES ********************************************/
+  .open_main_menu,
+  .close_main_menu{
+    display: block; /* Esto hace que los botones sean visibles cuando estamos en dispositivos moviles */
+    border: none; /* Eliminamos los estilos al boton */
+    background: none; /* Eliminamos los estilos al boton */
+    cursor: pointer; /* Agregamos un cursor con puntero cuando se este navegando */
+  }
+
+  .close_main_menu { /* Como todo esta aliniado hasta el centro con esto cambiamos la alineacion del boton de cerrar */
+    align-self: flex-end; /* Alinea hasta el final el boton de close menu */
+    padding: 20px 15px;
+  }
+
+  .main_menu_opened { /* Cuando el menu este abierto */
+    opacity: 1; /* Quitar la opacidad para que se pueda ver el menu */ 
+    pointer-events: all; /* Desbloquear el puntero para que se pueda clickear el menu */
+  }
+  /* ------------------ Esto es solo por estetica pero no importante --------------------------  */
+  .open_main_menu:focus:not(:focus-visible), /* Esto quiere decir que si el el boton de abrir o cerrar boton tienen foco(borde que se le ve al boton cuando se va a presionar)  */
+  .close_main_menu:focus:not(:focus-visible) {
+    outline: none; /* Entonces esto le quita el foco al boton */
+  }
+/********************************----------------------------------*******************************/
+
+/* ******************** DESIGN OF EFECT UNDERLINE(RECTANGLE) ON MAIN_MENU ******************* */
+.main_menu a::after { /* Usamos este seudoselector para la interacion del subrayado(RECTANGULO) en el menu principal */
+  content: none; /* none porque cuando estemos en celulares no queremos el RECTANGULO(subrayado) */
+  
+}
+
+.main_menu a:hover,
+.main_menu a.selected { /* Cuando se haga HOVER(Seleccione) una opcion del menu */
+  color: var(--secundary-color); /* Que esa seleccion tenga ese color */
+}
+/**************************************----------------------------------***************************/
+}
+
+/* ****************************** DESIGN SECTION (PROFILE CSS) ********************************** */
+@import url(@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans:wght@700&display=swap");
+/* @IMPORT URL(""); Es otra manera de insertar fuentes de letras externas como la que agregue en el index. */
+
+
+.profile_info { 
+  margin-bottom: 25px; /* El margen es para SEPARAR la foto del boton */
+}
+
+.profile_img {
+  border-radius: 50%;
+  width: 80%; 
+  max-width: 350px;
+}
+
+.profile_img_section { /* Acomodamos la linea debajo de la imagen */
+  position: relative;
+}
+
+.profile_img_line {
+  background-color: var(--secundary-color);
+  height: 15px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  
+}
+
+.profile {
+  text-align: center; /* Se centra y se alinea todo lo que esta dentro de la clase PROFILE, osea los 2 DIVs que hay */
+}
+
+.profile_litle {
+  font-size: 35px;
+  font-weight: bold;
+  margin: 0;
+  color: var(--primary-color);
+  font-family: 'Noto Sans', sans-serif; /* Si por alguna razon no se encontrase la fuente NOTO SANS, entonces como respaldo que la fuente sea SANS-SERIF que se encuentra en todos los navegadores */
+}
+
+.profile_details {
+  font-size: 18px; /* Tamano de la fuente */
+  font-weight: 500; /* Fuerza de la letra */
+  line-height: 1.3; /* ALTO DE LINEA Espaciado entre los elementos */
+  max-width: 450px; /* Es importante que los parrafos no tengan mas de 6 o 7 parrafos para que no se vuelvan ilegibles */
+  margin: 20px auto;
+}
+
+.profile_btn { /* Estilo para el boton de descarga de CV */
+  background-color: var(--primary-color);
+  color: var(--text-color-inverse);
+  border: none; /* Recetea los bordes que ponen los botones por defecto*/
+  font-size: 20px; /* Tamano del boton de download CV*/
+  padding: 0.5em 1em; /* Separa el boton de descarga de CV del texto del primer DIV, para que no se vea tan pegado. Al utilizar la unidad EM nos sirve por si cambiamos el tamanO(font-size) del boton, ya que la unidad EM, se ajustara coautomaticamente con el boton. */
+  border-radius: 7px; /*Redondea el boton*/
+  cursor: pointer; /* Hace que se vea mejor el cursor */
+}
+
+.profile_btn:hover { /* Cuando pase el cursor encima del boton de download entonces reaccionar a los siguientes estilos: */
+filter: brightness(130%); /* Da brillo en ese porcentaje al boton cuando el cursor se posa sobre el. */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 .principalHome {
   background-color: rgb(177, 190, 186);
   
@@ -15,15 +287,21 @@
   top: 600px;
   
 }
+*/
 
 
 /* Add a black background color to the top navigation */
+/*
 .topnav {
     background-color: #333;
     overflow: hidden;
   }
-  
-  /* Style the links inside the navigation bar */
+*/
+
+
+
+/* Style the links inside the navigation bar */
+/*
   .topnav a {
     float: left;
     color: #f2f2f2;
@@ -32,15 +310,22 @@
     text-decoration: none;
     font-size: 17px;
   }
-  
+  */
+
+
   /* Change the color of links on hover */
+  /*
   .topnav a:hover {
     background-color: #ddd;
     color: black;
   }
-  
+  */
+
+
   /* Add a color to the active/current link */
+  /*
   .topnav a.home {
     background-color: #04AA6D;
     color: white;
   }
+  */
