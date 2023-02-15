@@ -1,7 +1,7 @@
 
 
 /*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/* DECLARACION DE VARIABLES */
+/* DECLARACION DE VARIABLES DE COLOR*/
 :root {  /*Aqui definimos variables para los diferentes colores que voy a tener en mi pagina. :root = html, simplemente el :root es mas generico y se usa por si esta hoja de CSS se utiliza en otro proyecto*/
   --theme-color: white; /*Declarar y usar variables es muy util para hacer en el futuro cambios de diseno mucho mas facil. ya que solo cambiasmos lo que queremos modificar en la variable y se realizaran todos los cambios en donde se mencione esa variable*/
   --primary-color: rgb(0, 81, 255);
@@ -11,6 +11,57 @@
   --navbar-shallow-color: rgb(141, 129, 129);
   --menu-mobile-background-color: rgb(37, 40, 128);
 }
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+body {  /* Esto indica que toda la fuente del body sean las que especifica ahi y las que indico en el head del html*/
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--theme-color);
+  color: var(--tex-color);
+  padding-top: 70px; /* Se le agrega este RELLENO ARRRIBA para que pueda verse bien los DIV que contienen mi presentacion principal, ya que todo el topheader esta fijado con POSITION FIXED */
+}
+/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+.contact_list { /* STYLE OF THE SOCIAL,CONTACT, LIST */
+
+  padding: 0; /*Receteamos el padding de la izquierda que las listas tienen por defecto */
+
+  display: flex; /*Pone las listas una al lado de otra en el eje horizontal*/
+  flex-wrap: wrap; /* QUITA EL SCROLL hacia la derecha y coloca los elemntos hacia abajo para que solo se haga SCROLL HACIA ABAJO */
+  justify-content: center;
+
+}
+.contact_list_inside {
+  font-size: 20px;
+  font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 42px;
+  padding: 0.5em 0.7em;
+  margin: 10px;
+} /* END STYLE OF THE SOCIAL,CONTACT LIST */
+
+a {
+  text-decoration: none; /* Esto lo que hace es que a le quite la linea que sale debajo de los enlaces, osea recetea ese formato */
+  color: var(--tex-color);
+}
+
+.horizontal_padding {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.vertical_padding {
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+@media (min-width: 950px) {
+  .horizontal_padding {
+    padding-left: 70px;
+    padding-right: 70px;
+  }
+  .vertical_padding {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+}
+
+
 
 .topheader { /* Este es el encabezado de arriba donde va la foto pqequena y mi nombre */
   box-shadow: 0 4px 5px var(--navbar-shallow-color); /* Esto es para crear como una linea de sombre que contenga a la barra de navegacion, luego llamamos a la variable color para darle el color a la sombra */
@@ -19,6 +70,7 @@
   left: 0; /* Se a la izquierda en 0 ya que cuando se agregue estilo al contenido, el logo_little_photo quedaria con el margen del contenido */
   top: 0; /* Se fija hacia arriba en 0 ya que cuando se agregue estilo al contenido, el logo_little_photo quedaria con el margen del contenido */
   width: 100%;
+  z-index: 100; /*** Esto hace que al Hacer SCROLL la imagen de la foto quede por detras de la barra de navegacion */
 }
 
 .topnav {  /* Barra de navegacion de arriba */
@@ -47,20 +99,6 @@
 
 .logo_little_photo img { /* Con esto redondeamos los bordes la imagen del logo(little_photo) */
   border-radius: 50%;
-}
-
-/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-body {  /* Esto indica que toda la fuente del body sean las que especifica ahi y las que indico en el head del html*/
-  font-family: 'Montserrat', sans-serif;
-  background-color: var(--theme-color);
-  color: var(--tex-color);
-  padding-top: 80px; /* Se le agrega este RELLENO ARRRIBA para que pueda verse bien los DIV que contienen mi presentacion principal, ya que todo el topheader esta fijado con POSITION FIXED */
-}
-/*---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-a {
-  text-decoration: none; /* Esto lo que hace es que a le quite la linea que sale debajo de los enlaces, osea recetea ese formato */
-  color: var(--tex-color);
-
 }
 
 /*STAR MENU STYLE*/
@@ -120,8 +158,8 @@ a {
   justify-content: center;
 }
 
-/* ******************* MODO DISPOSITIVO MOVIL *********************** */
-@media (max-width: 950px) { /* Con esta mediaquery empezamos a dar las intrucciones de los estilos para los dispositivos moviles, ademas de indicarle que si la pantalla tiene menos de 950px, entonces que aplique los siguientes estilos */
+/* ******************* MODE MOVIL DEVICE *********************** */
+@media (max-width: 900px) { /* Con esta mediaquery empezamos a dar las intrucciones de los estilos para los dispositivos moviles, ademas de indicarle que si la pantalla tiene menos de 950px, entonces que aplique los siguientes estilos */
   
   .main_menu { /*  */
     flex-direction: column; /* Pone en columna los elementos que estan en fila de la barra de navegacion*/
@@ -189,36 +227,36 @@ a {
 }
 
 /* ****************************** DESIGN SECTION (PROFILE CSS) ********************************** */
-@import url(@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans:wght@700&display=swap");
+@import url: ("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans:wght@700&display=swap");
 /* @IMPORT URL(""); Es otra manera de insertar fuentes de letras externas como la que agregue en el index. */
-
 
 .profile_info { 
   margin-bottom: 25px; /* El margen es para SEPARAR la foto del boton */
 }
 
 .profile_img {
-  border-radius: 50%;
+  /*border-radius: 50%;*/
   width: 80%; 
-  max-width: 350px;
+  max-width: 300px;
 }
 
 .profile_img_section { /* Acomodamos la linea debajo de la imagen */
-  position: relative;
+  position: relative; /* id001 */
 }
 
 .profile_img_line {
   background-color: var(--secundary-color);
   height: 15px;
-  position: absolute;
+  position: absolute; /* id001 */
   width: 100%;
   left: 0;
-  bottom: 0;
-  
+  bottom: 0;  
+
 }
 
 .profile {
   text-align: center; /* Se centra y se alinea todo lo que esta dentro de la clase PROFILE, osea los 2 DIVs que hay */
+  /*display: flex;*/
 }
 
 .profile_litle {
@@ -251,81 +289,78 @@ a {
 filter: brightness(130%); /* Da brillo en ese porcentaje al boton cuando el cursor se posa sobre el. */
 }
 
+/* ***************** DESING STYLE DESKTOP DEVICE - OVERWRITE CODE ********************** */
+@media (min-width: 950px) {
+  .profile_info { 
+    margin-bottom: 0px; /* El margen es para SEPARAR la foto del boton */
+  }
+  
+  .profile_img {
+    /*border-radius: 50%;*/
+    width: 100%; 
+    max-width: 350px;
+    /*transform: scaleX(-1); /*CAMBIA LA ORIENTACION DE LA FOTO AL CAMBIAR DE DISPOSITIVO*/
+  }
+  
+  .profile {
+    text-align: left; /* Se centra y se alinea todo lo que esta dentro de la clase PROFILE, osea los 2 DIVs que hay */
+    display: flex;
+    justify-content: space-between;
+    max-width: 980px;
+    margin: 0 auto;
+    align-items: center;
+  }
+  
+  .profile_litle {
+    font-size: 60px;
+  }
+  
+  .profile_details {
+    font-size: 25px; /* Tamano de la fuente */
+    margin: 30px 0;
+  }
+  
+  .profile_btn { /* Estilo para el boton de descarga de CV */
+    font-size: 28px; /* Tamano del boton de download CV*/
+  }
+} /* END @MEDIA STYLE MOVIL AND DESKTOP DEVICES */
+/* ************************** STYLE SKILLS ***************************** */
 
+.skills {  /* Esto hace que por mas habilidades que se agreguen, no se vea mal y se centreen de la manera correcta en todos los tipos de dispositivos, grandes, medianos y pequenos */
+  max-width: 980px; /*MANXIMO DE ANCHO*/
+  margin: 0 auto; /*** Al usar max-width tenemos que recetar el margen ya que el max-width agrega por defecto margen hacia la izquierda */
+}
 
+.skills_title {
+    font-size: 30px; /*TAMANO*/
+    font-weight: bold; /*NEGRITA*/
+    text-transform: uppercase; /*MAYUSCULA*/
+    text-align: center; /*ALINEADO CENTRAL*/
+}
+.skills_skill {
+    font-size: 20px;
+    font-weight: 500;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 42px;
+    padding: 0.5em 0.7em;
+    margin: 10px;
+}
+.skills_list {
+  list-style: none; /*Quita los PUNTOS al inicio de cada elemento de la lista*/
+  padding: 0; /*Receteamos el padding de la izquierda que las listas tienen por defecto */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-.principalHome {
-  background-color: rgb(177, 190, 186);
+  display: flex; /*Pone las habilidades una al lado de otra en el eje horizontal*/
+  flex-wrap: wrap; /* QUITA EL SCROLL hacia la derecha y coloca los elemntos hacia abajo para que solo se haga SCROLL HACIA ABAJO */
+  justify-content: center; /* Centra contenido en el eje horizontal */
+}
+/*------------SKILLS STYLE FOR DESKTOP DEVICE----------*/
+@media (min-width: 950px) {
+.skills_title { /* CODE OVERWRITE */
+    font-size: 50px; /*Le aumento 20px para que cuando se vea desde un DESKTOP no se vea tan pequeno*/
   
 }
-
-#ProfilePhoto {
-  position: absolute;
-  top: 150px;
-  right: 60px;
+.skills_skill { /* CODE OVERWRITE */
+    font-size: 30px; /* AJUSTE PARA DESKTOP */
+    margin: 20px; /* AJUSTE PARA DESKTOP */
 }
-
-#Philippians_4_13 {
-  position: absolute;
-  top: 600px;
-  
 }
-*/
-
-
-/* Add a black background color to the top navigation */
-/*
-.topnav {
-    background-color: #333;
-    overflow: hidden;
-  }
-*/
-
-
-
-/* Style the links inside the navigation bar */
-/*
-  .topnav a {
-    float: left;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-  }
-  */
-
-
-  /* Change the color of links on hover */
-  /*
-  .topnav a:hover {
-    background-color: #ddd;
-    color: black;
-  }
-  */
-
-
-  /* Add a color to the active/current link */
-  /*
-  .topnav a.home {
-    background-color: #04AA6D;
-    color: white;
-  }
-  */
