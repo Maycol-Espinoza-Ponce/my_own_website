@@ -22,7 +22,7 @@ body {  /* Esto indica que toda la fuente del body sean las que especifica ahi y
 .contact_list { /* STYLE OF THE SOCIAL,CONTACT, LIST */
 
   padding: 0; /*Receteamos el padding de la izquierda que las listas tienen por defecto */
-
+  list-style: none; /* RECETEO de los puntos de LISTA */
   display: flex; /*Pone las listas una al lado de otra en el eje horizontal*/
   flex-wrap: wrap; /* QUITA EL SCROLL hacia la derecha y coloca los elemntos hacia abajo para que solo se haga SCROLL HACIA ABAJO */
   justify-content: center;
@@ -227,7 +227,7 @@ a {
 }
 
 /* ****************************** DESIGN SECTION (PROFILE CSS) ********************************** */
-@import url: ("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans:wght@700&display=swap");
+/* @import url: (https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Noto+Sans:wght@700&display=swap); */
 /* @IMPORT URL(""); Es otra manera de insertar fuentes de letras externas como la que agregue en el index. */
 
 .profile_info { 

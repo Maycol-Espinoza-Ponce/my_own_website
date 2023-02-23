@@ -12,3 +12,11 @@ function togglemain_menu() {
 openmain_menuBtn.addEventListener("click", togglemain_menu);
 closemain_menuBtn.addEventListener("click", togglemain_menu);
 
+var num = 10
+var nombre =  "mike"
+var hombre = true
+
+num = 10
+let num 
+
+const cedula = 123
